@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://portfolio-3v9p.onrender.com/api",
 });
 
 export const sendMessage = (data) => API.post("/contact", data);
