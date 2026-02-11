@@ -1,0 +1,116 @@
+.hero h1 span {
+  color: var(--text-color);
+  display: inline-block;   
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    color: var(--text-color);;
+  }
+  to {
+    color: var(--text-color);;
+  }
+}
+
+.hero {
+  scroll-margin-top: 100px;
+}
+
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  gap: 12px;   
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  margin-bottom: 14px;
+  color: #94a3b8;
+}
+
+.hero p {
+  max-width: 520px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  line-height: 1.7;   /* 🔥 THIS fixes sentence separation */
+}
+
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.primary {
+  background: var(--background-color);
+  color: var(--bg-textcolor);
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--text-color);
+  padding: 12px 24px;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

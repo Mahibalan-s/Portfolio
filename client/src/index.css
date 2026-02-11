@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  cursor: pointer;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+:root {
+  --bg-color: #020617;
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --text-color: #e5e7eb;
+  --muted-text: #94a3b8;
+  --primary: #38bdf8;
+  --border-color: #1e293b;
+  --bg-textcolor: #020617;
+  --background-color: #38bdf8;
+}
+
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-color: #020617;
+  --muted-text: #475569;
+  --primary: #0284c7;
+  --border-color: #e2e8f0;
+  --background-color: #020617;
+  --bg-textcolor: #e2e8f0;
+}
+
+
+

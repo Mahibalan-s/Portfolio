@@ -1,0 +1,19 @@
+.projects {
+  padding: 80px 60px;
+  background-color: var(--bg-color);
+  scroll-margin-top: 100px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 20px;
+  }
+}
