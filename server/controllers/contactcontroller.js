@@ -37,6 +37,7 @@ const createMessage = async (req, res) => {
                 pass: process.env.EMAIL_PASS,
             },
         });
+        res.status(201).json({ success: true });
 
         // send email
         await resend.emails.send({
@@ -46,12 +47,11 @@ const createMessage = async (req, res) => {
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
         });
 
-        ✨ auto reply to sender
-        await resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: email,
-            subject: "Thanks for contacting Mahibalan",
-            text: `Hi ${name},
+await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: email,
+    subject: "Thanks for contacting Mahibalan",
+    text: `Hi ${name},
 
 Thank you for reaching out! I have received your message and will get back to you soon.
 
@@ -60,13 +60,11 @@ Mahibalan`,
 });
 
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: "Server error" });
-    }
+    console.log(error);
+    res.status(500).json({ error: "Server error" });
+}
 };
 
 
 
 module.exports = { createMessage, getMessages };
-
-
