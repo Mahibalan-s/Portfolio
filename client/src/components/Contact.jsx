@@ -20,16 +20,17 @@ function Contact() {
 
   try {
     const res = await sendMessage(form);
-    console.log("API SUCCESS", res);
+    console.log("SUCCESS RESPONSE:", res);
 
     setStatus("success");
     setForm({ name: "", email: "", message: "" });
 
   } catch (error) {
-    console.log("API ERROR", error);
+    console.log("FAILED RESPONSE:", error.response || error.message);
     setStatus("error");
   }
 };
+
 
 
 
