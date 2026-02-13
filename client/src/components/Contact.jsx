@@ -22,7 +22,7 @@ function Contact() {
       await sendMessage(formData);
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", message: "" });
 
     } catch (error) {
       setStatus("error");
