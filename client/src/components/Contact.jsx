@@ -70,7 +70,11 @@ function Contact() {
           <button type="submit">Send Message</button>
 
           {status === "success" && (
-            <p className="success-msg">✅ Message sent successfully</p>
+            
+            <div>
+              <p className="success-msg">✅ Message sent successfully </p>
+              <p className="success-reply">Thank you for reaching out! I have received your message and will get back to you as soon as possible.</p>
+            </div>
           )}
 
           {status === "error" && (
