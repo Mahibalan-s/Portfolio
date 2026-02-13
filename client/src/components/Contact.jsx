@@ -19,18 +19,17 @@ function Contact() {
     e.preventDefault();
 
     try {
-      await sendMessage(form);
-      setStatus("Message sent successfully ");
+      await sendMessage(formData);
 
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+
     } catch (error) {
-      setStatus("Failed to send ");
+      setStatus("error");
     }
   };
+
+
 
   return (
     <section className="contact" id="contact">
@@ -70,7 +69,18 @@ function Contact() {
 
           <button type="submit">Send Message</button>
 
-          {status && <p className="form-status">{status}</p>}
+          {status === "success" && (
+            <p style={{ color: "lightgreen", marginTop: "10px" }}>
+              Message sent successfully 
+            </p>
+          )}
+
+          {status === "error" && (
+            <p style={{ color: "red", marginTop: "10px" }}>
+              Something went wrong 
+            </p>
+          )}
+
         </form>
       </div>
     </section>
