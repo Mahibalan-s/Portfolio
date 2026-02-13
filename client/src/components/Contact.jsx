@@ -22,14 +22,10 @@ function Contact() {
     setStatus("success");
     setForm({ name: "", email: "", message: "" });
 
-    // auto hide after 3 sec
-    setTimeout(() => setStatus(""), 3000);
 
   } catch (error) {
     console.log(error);
     setStatus("error");
-
-    setTimeout(() => setStatus(""), 3000);
   }
 };
 
