@@ -1,4 +1,4 @@
-const Project = require("./models/Project");
+const Project = require("../models/project");
 
 const getProjects = async (req, res) => {
   const projects = await Project.find().sort({ createdAt: -1 });
