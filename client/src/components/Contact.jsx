@@ -70,6 +70,7 @@ function Contact() {
           ></textarea>
 
           <button type="submit">Send Message</button>
+          <p>STATUS: {status}</p>
 
           {status === "success" && (
             <p style={{ color: "lightgreen", marginTop: "10px" }}>
