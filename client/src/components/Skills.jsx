@@ -23,11 +23,6 @@ function Skills() {
         </div>
 
         <div className="skill-card">
-          <h3>Core & Systems</h3>
-          <p>Linux, Kernel Basics, OS Concepts</p>
-        </div>
-
-        <div className="skill-card">
           <h3>Embedded & IoT</h3>
           <p>Embedded C, Sensors, Microcontrollers</p>
         </div>
