@@ -28,6 +28,7 @@ const createMessage = async (req, res) => {
         });
 
         // mail setup
+        console.log("Email through port 587");
         const transporter = nodemailer.createTransport({
           host: "smtp.gmail.com",
           port: 587,
