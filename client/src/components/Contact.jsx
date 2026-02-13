@@ -11,26 +11,23 @@ function Contact() {
 
   const [status, setStatus] = useState("");
 
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = async (e) => {
   e.preventDefault();
-
-  setStatus("loading");
 
   try {
     await sendMessage(form);
 
     setStatus("success");
-    setForm({ name: "", email: "", message: "" });
-
+    setFormData({ name: "", email: "", message: "" });
 
   } catch (error) {
-    console.log(error);
     setStatus("error");
   }
 };
-
-
-
 
 
   return (
@@ -70,20 +67,8 @@ function Contact() {
           ></textarea>
 
           <button type="submit">Send Message</button>
-          <p>STATUS: {status}</p>
 
-          {status === "success" && (
-            <p style={{ color: "lightgreen", marginTop: "10px" }}>
-              Message sent successfully 
-            </p>
-          )}
-
-          {status === "error" && (
-            <p style={{ color: "red", marginTop: "10px" }}>
-              Something went wrong 
-            </p>
-          )}
-
+          {status && <p className="form-status">{status}</p>}
         </form>
       </div>
     </section>
