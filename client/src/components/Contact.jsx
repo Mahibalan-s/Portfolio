@@ -14,22 +14,22 @@ function Contact() {
   const handleSubmit = async (e) => {
   e.preventDefault();
 
+  setStatus("loading");
+
   try {
-    const res = await sendMessage(form);
-    console.log("SUCCESS:", res.status, res.data);
+    await sendMessage(form);
 
     setStatus("success");
     setForm({ name: "", email: "", message: "" });
 
-  } catch (error) {
-    if (error.response) {
-      console.log("ERROR STATUS:", error.response.status);
-      console.log("ERROR DATA:", error.response.data);
-    } else {
-      console.log("ERROR:", error.message);
-    }
+    // auto hide after 3 sec
+    setTimeout(() => setStatus(""), 3000);
 
+  } catch (error) {
+    console.log(error);
     setStatus("error");
+
+    setTimeout(() => setStatus(""), 3000);
   }
 };
 
