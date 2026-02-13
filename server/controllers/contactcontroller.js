@@ -1,5 +1,7 @@
 const Contact = require("../models/contact");
 const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const getMessages = async (req, res) => {
     try {
@@ -28,39 +30,35 @@ const createMessage = async (req, res) => {
         });
 
         // mail setup
-        console.log("Email through port 587");
         const transporter = nodemailer.createTransport({
-          host: "smtp.gmail.com",
-          port: 587,
-          secure: false, // important
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
+            service: "gmail",
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        });
 
         // send email
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+        await resend.emails.send({
+            from: "onboarding@resend.dev",
             to: process.env.EMAIL_USER,
             subject: "New Portfolio Message",
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
         });
+
         // ✨ auto reply to sender
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+        await resend.emails.send({
+            from: "onboarding@resend.dev",
             to: email,
             subject: "Thanks for contacting Mahibalan",
             text: `Hi ${name},
 
-                Thank you for reaching out! I have received your message and will get back to you as soon as possible.
+Thank you for reaching out! I have received your message and will get back to you soon.
 
 Best regards,
-Mahibalan
-`,
-        });
-        res.status(201).json(newMessage);
+Mahibalan`,
+});
+
     } catch (error) {
         console.log(error);
         res.status(500).json({ error: "Server error" });
