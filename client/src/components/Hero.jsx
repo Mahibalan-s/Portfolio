@@ -1,6 +1,8 @@
 import "../styles/Hero.css";
 import { FaReact, FaNodeJs, FaLinux, FaDatabase } from "react-icons/fa";
 import { SiMongodb, SiC } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
+
 
 function Hero() {
   return (
@@ -18,7 +20,10 @@ function Hero() {
 
         <div className="hero-buttons">
           <a href="#projects"><button className="primary" >View Projects</button></a>
+          <a href="https://leetcode.com/u/mahib_alan/" target="_blank"><button className="ternary">Leetcode Profile</button></a>
           <a href="#contact"><button className="secondary" >Contact Me</button></a>
+          
+
         </div>
       </div>
 
