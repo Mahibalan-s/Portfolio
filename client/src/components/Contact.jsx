@@ -19,7 +19,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      await sendMessage(formData);
+      await sendMessage(form);
 
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
