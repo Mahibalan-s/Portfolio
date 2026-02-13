@@ -24,13 +24,13 @@ function Contact() {
       setStatus("success");
       setTimeout(() => {
       setStatus(null);
-    }, 3500);
+    }, 5000);
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       setStatus("error");
       setTimeout(() => {
       setStatus(null);
-    }, 3500);
+    }, 5000);
     }
   };
 
