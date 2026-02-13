@@ -9,26 +9,24 @@ function Contact() {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState(null); // null | success | error
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    await sendMessage(form);
+    try {
+      await sendMessage(form); // API + email works
 
-    setStatus("success");
-    setFormData({ name: "", email: "", message: "" });
-
-  } catch (error) {
-    setStatus("error");
-  }
-};
-
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+    }
+  };
 
   return (
     <section className="contact" id="contact">
@@ -49,6 +47,7 @@ function Contact() {
             placeholder="Your Name"
             value={form.name}
             onChange={handleChange}
+            required
           />
 
           <input
@@ -57,6 +56,7 @@ function Contact() {
             placeholder="Your Email"
             value={form.email}
             onChange={handleChange}
+            required
           />
 
           <textarea
@@ -64,11 +64,18 @@ function Contact() {
             placeholder="Your Message"
             value={form.message}
             onChange={handleChange}
-          ></textarea>
+            required
+          />
 
           <button type="submit">Send Message</button>
 
-          {status && <p className="form-status">{status}</p>}
+          {status === "success" && (
+            <p className="success-msg">✅ Message sent successfully</p>
+          )}
+
+          {status === "error" && (
+            <p className="error-msg">❌ Something went wrong</p>
+          )}
         </form>
       </div>
     </section>
