@@ -73,6 +73,16 @@ button:active {
   gap: 20px;
 }
 
+.leetcode-btn {
+  background: var(--background-color);
+  color: var(--bg-textcolor);
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+}
+
+
+
 .primary {
   background: var(--background-color);
   color: var(--bg-textcolor);
@@ -85,8 +95,15 @@ button:active {
   background: transparent;
   color: var(--text-color);
   padding: 12px 24px;
-  border: 1px solid #38bdf8;
+  border: 1px solid var(--background-color);
   border-radius: 6px;
+}
+.ternary {
+  background: var(--background-color);
+  color: var(--bg-textcolor);
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
 }
 
 
