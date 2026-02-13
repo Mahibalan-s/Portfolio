@@ -47,17 +47,17 @@ const createMessage = async (req, res) => {
         });
 
         // ✨ auto reply to sender
-        await resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: email,
-            subject: "Thanks for contacting Mahibalan",
-            text: `Hi ${name},
+//         await resend.emails.send({
+//             from: "onboarding@resend.dev",
+//             to: email,
+//             subject: "Thanks for contacting Mahibalan",
+//             text: `Hi ${name},
 
-Thank you for reaching out! I have received your message and will get back to you soon.
+// Thank you for reaching out! I have received your message and will get back to you soon.
 
-Best regards,
-Mahibalan`,
-});
+// Best regards,
+// Mahibalan`,
+// });
 
     } catch (error) {
         console.log(error);
