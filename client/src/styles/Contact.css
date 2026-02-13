@@ -21,6 +21,10 @@
   color: #f87171;
   font-weight: 500;
 }
+.success-reply{
+  margin-top:12px;
+  color:var(--text-color);
+}
 
 
 .contact-container {
