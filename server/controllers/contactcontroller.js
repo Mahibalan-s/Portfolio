@@ -29,12 +29,15 @@ const createMessage = async (req, res) => {
 
         // mail setup
         const transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
+          host: "smtp.gmail.com",
+          port: 587,
+          secure: false, // important
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
 
         // send email
         await transporter.sendMail({
