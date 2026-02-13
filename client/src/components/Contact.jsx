@@ -16,18 +16,20 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      await sendMessage(form);
+  try {
+    const res = await sendMessage(form);
+    console.log("SUCCESS:", res.data);
 
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+    setStatus("success");
+    setForm({ name: "", email: "", message: "" });
 
-    } catch (error) {
-      setStatus("error");
-    }
-  };
+  } catch (error) {
+    console.log("ERROR:", error.response?.data || error.message);
+    setStatus("error");
+  }
+};
 
 
 
