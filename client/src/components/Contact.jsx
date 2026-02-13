@@ -22,9 +22,15 @@ function Contact() {
       await sendMessage(form); // API + email works
 
       setStatus("success");
+      setTimeout(() => {
+      setStatus(null);
+    }, 3500);
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       setStatus("error");
+      setTimeout(() => {
+      setStatus(null);
+    }, 3500);
     }
   };
 
