@@ -11,25 +11,28 @@ function Contact() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
   const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
     const res = await sendMessage(form);
-    console.log("SUCCESS RESPONSE:", res);
+    console.log("SUCCESS:", res.status, res.data);
 
     setStatus("success");
     setForm({ name: "", email: "", message: "" });
 
   } catch (error) {
-    console.log("FAILED RESPONSE:", error.response || error.message);
+    if (error.response) {
+      console.log("ERROR STATUS:", error.response.status);
+      console.log("ERROR DATA:", error.response.data);
+    } else {
+      console.log("ERROR:", error.message);
+    }
+
     setStatus("error");
   }
 };
+
 
 
 
