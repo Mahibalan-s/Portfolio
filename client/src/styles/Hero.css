@@ -26,7 +26,23 @@ button:hover {
   box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
 }
 
+
+
 button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+.resume-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+.resume-btn:active {
   transform: translateY(0);
   box-shadow: none;
 }
@@ -114,12 +130,14 @@ button:active {
   display: inline-block;
   margin-top: 0px;
   margin-left: 12px;
-  width: 140px;
-  padding: 10px 18px;
+  width: 130px;
+  padding: 12px 24px;
   display: flex;
   background: var(--background-color);
   color: var(--bg-textcolor);
   border-radius: 6px;
+  font-weight: 500;
+  font-size: small;
   text-decoration: none;
   transition: 0.3s ease;
 }
