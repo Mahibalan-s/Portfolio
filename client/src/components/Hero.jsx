@@ -26,7 +26,7 @@ function Hero() {
           </div>
 
           <a
-            href="Mahi_resume.pdf"
+            href="/Mahi_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
