@@ -19,10 +19,22 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="#projects"><button className="primary" >View Projects</button></a>
-          <a href="https://leetcode.com/u/mahib_alan/" target="_blank"><button className="ternary">Leetcode Profile</button></a>
-          <a href="#contact"><button className="secondary" >Contact Me</button></a>
-          
+          <div>
+            <a href="#projects"><button className="primary" >View Projects</button></a>
+            <a href="https://leetcode.com/u/mahib_alan/" target="_blank"><button className="ternary">Leetcode Profile</button></a>
+            <a href="#contact"><button className="secondary" >Contact Me</button></a>
+          </div>
+
+          <a
+            href="./public/Mahi_resume(2).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn"
+          >
+            View Resume
+          </a>
+
+
 
         </div>
       </div>
