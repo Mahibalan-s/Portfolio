@@ -171,5 +171,13 @@ button:active {
     flex-direction: column;
     align-items: flex-start;
   }
+  .hero-btn{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-btn button{
+    margin-top: 20px;
+  }
+
 }
 
